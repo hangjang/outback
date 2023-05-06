@@ -1,0 +1,671 @@
+@charset "utf-8";
+
+*{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+a{text-decoration: none; color:#333;}
+
+@font-face {
+    font-family: 'MonoplexKRWideNerd-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-widenerd@1.0/MonoplexKRWideNerd-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@media (max-width:767px){
+    header {
+        width: 100%;
+        height: 80px;
+        background-color: #333;
+        font-size: 15px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #header-all {
+        width: 100%;
+        height: 80px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;}
+
+    #logo{
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left:50px;
+    }
+
+    /* nav 이름 nav_menubar */
+    nav{width:100%;
+        position:absolute;
+        top:80px;
+        background-color:#333;
+    }
+
+    .menubar{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        display:none;
+    }
+    /* .menubar */
+    .menubar>li>a{ 
+        padding:10px;
+        font-family: 'MonoplexKRWideNerd-Bold';
+        color: #fff;
+        font-size: 1.4rem;
+        display:block;
+       
+    }
+
+    .menubar>li>a:hover{
+        color: #c30606;
+        transition: 0.5s ease-in-out;
+    }
+
+    .submenu {
+        display:none;
+    }
+    
+    .brandlist>li{
+        padding:5px 0;
+    }
+    .brandlist>li>a {
+        font-family: 'Barlow', sans-serif;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+
+    .menulist>li{
+        padding:5px 0;
+    }
+    .menulist>li>a {
+        font-family: 'Barlow', sans-serif;
+        color: #fff;
+        font-size: 1.1rem;
+        padding:5px 0;
+    }
+
+    .cardlist>li{
+        padding:5px 0;
+    }
+    .cardlist>li>a{
+        font-family: 'Barlow', sans-serif;
+        color: #fff;
+        font-size: 1.1rem;
+        padding:5px 0;
+    }
+    /* button+ 메뉴 아이콘 div */
+    .icon_button{ 
+        width:170px;
+        margin-right:30px;
+        display:flex;
+        justify-content: space-around;
+    }
+
+    /* 메뉴 아이콘 div */
+    .menu-icon{ 
+        width:40px;
+        height:40px;
+        position:relative;
+        cursor: pointer;
+        display:block;
+    }
+    .menu-linebar:nth-of-type(1){
+        width:35px;
+        height:3px;
+        background-color:#fff;
+        border-radius: 25px;
+        display:block;
+        position:relative;
+        top:6px;
+    }
+    .menu-linebar:nth-of-type(2){
+        width:35px;
+        height:3px;
+        background-color:#fff;
+        border-radius: 25px;
+        display:block;
+        position:relative;
+        top:15px;
+    }
+    .menu-linebar:nth-of-type(3){
+        width:35px;
+        height:3px;
+        background-color:#fff;
+        border-radius: 25px;
+        display:block;
+        position:relative;
+        top:24px;
+    }
+    .menu-icon .icon-rotate-num1{
+        transform:rotate(-45deg);
+        top:19px;
+        transition:all 0.2s linear;
+    }
+    .menu-icon .icon-rotate-num2{
+        transform:rotate(45deg);
+        top:16px;
+        transition:all 0.2s linear;
+    }
+    .menu-icon .icon-none{
+        display:none;
+    }
+
+    /* 예약버튼 */
+    .book {
+        padding: 15px;
+        background-color: #c30606;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        line-height: 10px;
+    }
+
+    /* footer */
+    footer {
+        width: 100%;
+        height: 370px;
+        margin: 0 auto;
+        background-color: #3f3f3f;
+    }
+
+    #footer>ul>li, #footer>ul>li>a, #footer>p {
+        color: #fff;
+    }
+
+    #footer>ul>li {
+        padding: 8px;
+        text-align: center;
+        font-size:0.8rem;
+    }
+
+    #footer>p {
+        padding: 8px;
+    }
+
+    .firstfooter{
+        padding:30px 0 10px 0;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .secondfooter{
+        padding-bottom:10px;
+    }
+    
+    .secondfooter>li:nth-child(even){
+        display:none;
+    }
+
+    .thirdfooter>li:nth-of-type(5)>a{
+        display:none;
+    }
+
+    .thirdfooter>li:nth-child(even){
+        display:none;
+    }
+
+    .fourfooter{
+        padding-bottom:10px;
+        display:flex;
+        justify-content: center;
+    }
+
+    .fourfooter>li:nth-child(even){
+        display:none;
+    }
+
+    #popupcheck {
+        display:none;
+    }
+}
+
+
+/* 768 ~ 1299 크기 */ 
+@media (min-width:768px) and (max-width:1299px){
+    header {
+        width: 100%;
+        height: 90px;
+        background-color: #333;
+        font-size: 15px;}
+
+    #header-all {
+        width: 100%;
+        height: 90px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;}
+
+    #logo{
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left:50px;
+    }
+
+    /* nav 이름 nav_menubar */
+    nav{
+        width:100%;
+        position:absolute;
+        top:90px;
+        background-color:#333;
+    }
+
+    .menubar{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        display:none;
+    }
+    /* .menubar */
+    .menubar>li>a{
+        padding:10px;
+        font-family: 'MonoplexKRWideNerd-Bold';
+        color: #fff;
+        font-size: 1.4rem;
+        display:block;
+    }
+
+    .menubar>li>a:hover{
+        color: #c30606;
+        transition: 0.5s ease-in-out;
+    }
+
+    .submenu {
+        display:none;
+    }
+    
+    .brandlist>li{
+        padding:5px 0;
+    }
+    .brandlist>li>a {
+        font-family: 'Barlow', sans-serif;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+
+    .menulist>li{
+        padding:5px 0;
+    }
+    .menulist>li>a {
+        font-family: 'Barlow', sans-serif;
+        color: #fff;
+        font-size: 1.1rem;
+        padding:5px 0;
+    }
+    .cardlist>li{
+        padding:5px 0;
+    }
+    .cardlist>li>a{
+        font-family: 'Barlow', sans-serif;
+        color: #fff;
+        font-size: 1.1rem;
+        padding:5px 0;
+    }
+
+    /* button+ 메뉴 아이콘 div */
+    .icon_button{ 
+        display:flex;
+        justify-content: space-around;
+        width:170px;
+        margin-right:30px;
+    }
+
+    /* 메뉴 아이콘 div */
+    .menu-icon{ 
+        width:40px;
+        height:40px;
+        position:relative;
+        cursor: pointer;
+        display:block;
+    }
+    .menu-linebar:nth-of-type(1){
+        width:35px;
+        height:3px;
+        background-color:#fff;
+        border-radius: 25px;
+        display:block;
+        position:relative;
+        top:6px;
+        transform:rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    .menu-linebar:nth-of-type(2){
+        width:35px;
+        height:3px;
+        background-color:#fff;
+        border-radius: 25px;
+        display:block;
+        position:relative;
+        top:15px;
+    }
+    .menu-linebar:nth-of-type(3){
+        width:35px;
+        height:3px;
+        background-color:#fff;
+        border-radius: 25px;
+        display:block;
+        position:relative;
+        top:24px;
+        transform:rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    .menu-icon .icon-rotate-num1{
+        transform:rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        top:18px;
+        transition:all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+    }
+    .menu-icon .icon-rotate-num2{
+        transform:rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        top:16px;
+        transition:all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+    }
+    .menu-icon .icon-none{
+        display:none;
+    }
+
+
+    /* 예약버튼 */
+    .book {
+        padding: 15px;
+        background-color: #c30606;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        line-height: 10px;
+    }
+
+    /* footer */
+    footer {
+        width: 100%;
+        height: 300px;
+        background-color: #3f3f3f;
+        margin: 0 auto;
+    }
+    #footer {
+        width:100%;
+        height: 300px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding:50px 0 0 50px;
+        position: relative;
+    }
+    #footer>ul>li, #footer>ul>li>a,#footer>p {
+        color: #fff;
+    }
+
+    #footer>ul {
+        display: flex;
+    }
+
+    #footer>ul>li {
+        padding: 10px;
+    }
+
+    #footer>p {
+        padding: 10px;
+    }
+
+    .thirdfooter>li:nth-of-type(4){
+        display:none;
+    }
+
+    .thirdfooter>li:nth-of-type(5){
+        display:none;
+        cursor:auto;
+    }
+
+    #popupcheck {
+        display:none;
+    }
+}
+
+
+/* 1300 이상 미디어커리 */
+@media (min-width:1300px){
+    header {
+        width: 100%;
+        height: 90px;
+        background-color: #333;
+        font-size: 15px;
+    }
+
+    #header-all {
+        width: 1300px;
+        height: 90px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    nav {
+        width: 1000px;
+        display: block;
+    }
+    /* nav ul 전체 */
+    .menubar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+    }
+    .menubar>li>a {
+        padding-bottom: 5px;
+        font-family: 'MonoplexKRWideNerd-Bold';
+        color: #fff;
+        font-size: 1.4rem;
+        display:block;
+    }
+
+    .menubar>li:nth-of-type(3){
+        width:149px;
+    }
+    .menubar>li{
+        width:135px;
+        text-align: center;
+    }
+
+    .menubar>li>a:hover {
+        text-decoration: underline red;
+        transition: 0.5s ease-in-out;
+    }
+
+    .menubar>li {
+        display: inline-block;
+        position: relative;
+    }
+    /* BRAND+list */
+    .brandlist {
+        width: 170px;
+        height: 80px;
+        background-color: #333;
+        position: absolute;
+        top: 29px;
+        left: 5px;
+        text-align: left;
+        padding: 40px 0 10px 25px;
+        opacity: 0.9;
+        display: none;
+    }
+    .brandlist>li {
+        line-height: 38px;
+    }
+
+    .brandlist>li>a {
+        font-family: 'Barlow', sans-serif;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+
+    .brandhover:hover .brandlist {
+        display: block;
+    }
+    /* MENU+list */
+    .menulist {
+        width: 180px;
+        height: 250px;
+        background-color: #333;
+        position: absolute;
+        top: 29px;
+        left: 14px;
+        text-align: left;
+        padding: 50px 30px 10px 30px;
+        opacity: 0.9;
+        display: none;
+    }
+    .menulist>li {
+        line-height: 38px;
+    }
+    .menulist>li>a {
+        font-family: 'Barlow', sans-serif;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+    .menuhover:hover .menulist {
+        display: block;
+    }
+
+    .cardlist{
+        width:150px;
+        height:60px;
+        background-color:#333;
+        text-align: left;
+        padding:35px 5px 10px 25px;
+        opacity: 0.9;
+        position:absolute;
+        top:29px;
+        left:17px;
+        display:none;
+    }
+    .cardlist li>a{
+        font-family: 'Barlow', sans-serif;
+        color: #fff;
+        font-size: 1.1rem;
+        line-height: 55px;
+    }
+    .benefithover:hover .cardlist{
+        display:block;
+    }
+
+    .book {
+        padding: 15px;
+        background-color: #c30606;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        line-height: 10px;
+        }
+
+    /* footer */
+    footer {
+        width: 100%;
+        height: 300px;
+        background-color: #3f3f3f;
+        margin: 0 auto;
+    }
+    #footer {
+        width: 1300px;
+        height: 300px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 50px 0 0 15px;
+        position:relative;
+    }
+
+    #footer>ul>li, #footer>ul>li>a, #footer>p{
+        color:#fff;
+    }
+    
+    #footer>ul {
+        display: flex;
+    }
+
+    #footer>ul>li {
+        padding: 10px;
+    }
+
+    #footer>p {
+        padding: 10px;
+    }
+
+    .thirdfooter>li>a {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    /* 사업자정보확인 팝업 */
+    #popupcheck {
+        width: 400px;
+        height: 200px;
+        padding: 10px 10px 10px 20px;
+        background-color: #3f3f3f;
+        color: #fff;
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 15px;
+        border: 1px solid #fff;
+    }
+    #popupcheck a {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        z-index: 5;
+    }
+
+    #popupcheck a img {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #fff;
+    }
+
+    #popupcheck h3 {
+        height: 27px;
+        margin: 7px 0 4px 10px;
+        text-align: left;
+        font-weight: bold;
+        position: relative;
+    }
+
+    #popupcheck th,
+    td {
+        font-size: 0.8rem;
+        box-sizing: border-box;
+        padding-top: 3px;
+    }
+
+    #popupcheck th {
+        width: 130px;
+        text-align: left;
+        color: lightgray;
+        box-sizing: border-box;
+        padding-left: 17px;
+        font-family: 'GmarketSansMedium'
+    }
+    #popupcheck td{
+        font-family: 'NanumSquareNeo-Variable';
+    }
+}
